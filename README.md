@@ -21,13 +21,13 @@ This repository contains my personal [gallery-dl](https://github.com/mikf/galler
   - `XMP:Creator`
   - It stores the source URL of the image in the "Authors" section of the metadata (at least that's what Windows calls it). Works reliably for both JPEG's and PNG's
     
-  ![Screenshot of the Details Section in Properties showing the Authours field being filled up](https://media.discordapp.net/attachments/1080819163905392702/1524443344053338132/image.png?ex=6a506cc0&is=6a4f1b40&hm=9f30393abe7864af26a56b038844a5aade699cbcf864163a03f0fb8a1c0882e3&=&format=webp&quality=lossless&width=639&height=92)
+  ![Screenshot of the Details Section in Properties showing the Authours field being filled up](images/properties.png)
 
 ## Requirements
 
-- `gallery-dl`
-- `exiftool`
-- `figlet`
+- [gallery-dl](https://github.com/mikf/gallery-dl)
+- [exiftool](https://exiftool.org/)
+- [figlet](https://www.figlet.org/)
 
 Make sure both `exiftool` and `figlet` are available in your system's `PATH`.
 
@@ -42,7 +42,7 @@ Copy the configuration file to one of the following locations.
 
 ### Windows
 
-`gallery-dl` checks these locations (in order):
+[gallery-dl](https://github.com/mikf/gallery-dl) checks these locations (in order):
 
 ```text
 %APPDATA%\gallery-dl\config.json
@@ -61,7 +61,7 @@ ${HOME}/.config/gallery-dl/config.json
 ${HOME}/.gallery-dl.conf
 ```
 
-You can also clone this repository and copy the configuration to whichever location `gallery-dl` uses on your system.
+You can also clone this repository and copy the configuration to whichever location [gallery-dl](https://github.com/mikf/gallery-dl) uses on your system.
 
 ## Notes
 
