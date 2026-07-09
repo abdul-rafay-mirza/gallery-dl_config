@@ -1,0 +1,33 @@
+{
+    "extractor": {
+        "base-directory": "./",
+        "twitter": {
+            "directory": [""],
+            "filename": "twitter_{author[name]}_(@{author[nick]})_{tweet_id}.{extension}"
+        },
+        "pixiv": {
+            "directory": [""],
+            "filename": "pixiv_{id}_p{num}.{extension}"
+        },
+        "postprocessors": [
+            {
+                "name"   : "exec",
+                "async"  : false,
+                "command": ["figlet", "done!"],
+                "event"  : "after"
+            },
+            {
+                "name": "exec",
+                "command": [
+                    "exiftool", 
+                    "-overwrite_original", 
+                    "-Artist={_extr.url}",
+                    "-XPAuthor={_extr.url}",
+                    "-XMP:Creator={_extr.url}",
+                    "{_path}"
+                ],
+                "event": "after"
+            }
+        ]
+    }
+}
