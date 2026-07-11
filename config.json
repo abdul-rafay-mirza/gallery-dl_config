@@ -1,14 +1,21 @@
 {
     "extractor": {
         "base-directory": "./",
+        "cookies-from-browser": "librewolf",
+
         "twitter": {
             "directory": [""],
-            "filename": "twitter_{author[name]}_(@{author[nick]})_{tweet_id}.{extension}"
+            "filename": "_by_@{author[name]}.{extension}" 
         },
         "pixiv": {
             "directory": [""],
-            "filename": "pixiv_{id}_p{num}.{extension}"
+            "filename": "{title}_by_{user[account]}.{extension}"
         },
+        "danbooru": {
+            "directory": [""],
+            "filename": "{character:J_-_/}_{general:J_-_/}_by_{artist:J_-_/}.{extension}"
+        },
+
         "postprocessors": [
             {
                 "name"   : "exec",
@@ -21,6 +28,7 @@
                 "command": [
                     "exiftool", 
                     "-overwrite_original", 
+                    "-charset", "filename=UTF8",
                     "-Artist={_extr.url}",
                     "-XPAuthor={_extr.url}",
                     "-XMP:Creator={_extr.url}",
