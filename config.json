@@ -1,19 +1,24 @@
 {
     "extractor": {
         "base-directory": "./",
-        "cookies-from-browser": "librewolf",
+        "cookies-from-browser": "brave",
 
         "twitter": {
             "directory": [""],
-            "filename": "_by_@{author[name]}.{extension}" 
+            "filename": "_by_@{author[name]}_{tweet_id}_{num}.{extension}"
         },
         "pixiv": {
             "directory": [""],
-            "filename": "{title}_by_{user[account]}.{extension}"
+            "filename": "{title}_by_{user[account]}_{num}.{extension}"
         },
         "danbooru": {
             "directory": [""],
             "filename": "{character:J_-_/}_{general:J_-_/}_by_{artist:J_-_/}.{extension}"
+        },
+        "instagram": {
+            "directory": [""],
+            "cookies": "C:/Users/Rafay/AppData/Roaming/gallery-dl/cookies/instagram.txt",
+            "filename": "_by_@{username}_{post_id}_{num}.{extension}"
         },
 
         "postprocessors": [
